@@ -1,6 +1,5 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'package:timezone/data/latest.dart' as tz;
 
 class NotificationService {
   static final NotificationService _notificationService =
@@ -16,11 +15,11 @@ class NotificationService {
   NotificationService._internal();
 
   Future<void> initNotification() async {
-    final AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('@drawable/ic_flutternotification');
+    const AndroidInitializationSettings initializationSettingsAndroid =
+         AndroidInitializationSettings('@drawable/ic_flutternotification');
 
-    final IOSInitializationSettings initializationSettingsIOS =
-        IOSInitializationSettings(
+    const IOSInitializationSettings initializationSettingsIOS =
+          IOSInitializationSettings(
       requestAlertPermission: false,
       requestBadgePermission: false,
       requestSoundPermission: false,

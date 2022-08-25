@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:todoproject/Archived%20Tasks/archived.dart';
-import 'package:todoproject/Done%20Tasks/done.dart';
-import 'package:todoproject/New%20Tasks/new.dart';
-import 'package:todoproject/schedule.dart';
+import 'package:todoproject/Add%20Task/add_task.dart';
+
+import 'schedule/schedule.dart';
 
 class HomeLayout extends StatefulWidget {
-  HomeLayout({Key? key}) : super(key: key);
+ const HomeLayout({Key? key}) : super(key: key);
 
   @override
   State<HomeLayout> createState() => _HomeLayoutState();
@@ -13,8 +12,8 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   int currentindx = 0;
-  List<Widget> screens = [NewWidg(), DoneWidg(), Schedule()];
-  List<String> titels = ['New Task', 'Done Task', 'Schedule'];
+  List<Widget> screens = [const AddTask(),const Schedule()];
+  List<String> titels = ['New Task', 'Schedule'];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class _HomeLayoutState extends State<HomeLayout> {
               currentindx = index;
             });
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Tasks'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.check_circle), label: 'Done'),
